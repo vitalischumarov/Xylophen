@@ -6,9 +6,11 @@
 //
 
 import UIKit
+// AVFoundation muss importiert werden
 import AVFoundation
 
 class ViewController: UIViewController {
+//    Player muss erstellt werden
     var player: AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -20,8 +22,9 @@ class ViewController: UIViewController {
         playSound(key: pressedKey)
     }
     
-    func playSound(key: String) {
-        let url = Bundle.main.url(forResource: key, withExtension: "wav")
+    func playSound() {
+//      Eine Verbindung zum Bundle erstellen. Titel und Endung als String eingeben
+        let url = Bundle.main.url(forResource: "titel", withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player?.play()
     }
